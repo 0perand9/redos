@@ -1,7 +1,7 @@
 { inputs, ... }:
 {
   imports = [
-    ./virtualisation
+    #./virtualisation
     ./packages.nix
     ./boot.nix
     ./discord.nix #maybe move to home

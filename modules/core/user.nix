@@ -11,7 +11,7 @@
   home-manager = {
     useUserPackages = true;
     useGlobalPkgs = true;
-    backupFileExtension = "backup";
+    backupFileExtension = "hm-backup";
     extraSpecialArgs = {
       inherit
         inputs

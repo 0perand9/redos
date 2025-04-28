@@ -17,7 +17,6 @@
   wayland.windowManager.hyprland = {
     enable = true;
     xwayland.enable = true;
-    # enableNvidiaPatches = false;
     systemd.enable = true;
   };
   # Place Files Inside Home Directory

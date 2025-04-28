@@ -180,6 +180,19 @@ in
         "keepaspectratio, title:^(Picture-in-Picture)$"
         "noblur, tag:games*"
         "fullscreen, tag:games*"
+
+        # intellij fixes
+        #"noinitialfocus, class:^(.*jetbrains.*)$, title:^(win.*)$"
+        #"noinitialfocus, class:^(.*jetbrains.*)$, title:^\\s$"
+        #"nofocus, class:^(.*jetbrains.*)$, title:^(win.*)$"
+        #"nofocus, class:^(.*jetbrains.*)$, title:^\\s$"
+        
+        "center 1, class:^(jetbrains-.*)$,floating:1"
+        "float, class:^(jetbrains-.*)$,title:^(win.*)$"
+        "float, class:^(jetbrains-.*)$,title:^(dialog.*)$"
+        "float, class:^(jetbrains-.*)$,title:^(popup.*)$"
+        "float, class:^(jetbrains-.*)$,title:^(.*confirmation.*)$"
+        "float, class:^(jetbrains-.*)$,title:^(.*Choose.*)$"
       ];
 
       env = [
@@ -195,10 +208,14 @@ in
         "QT_AUTO_SCREEN_SCALE_FACTOR, 1"
         "SDL_VIDEODRIVER, x11"
         "MOZ_ENABLE_WAYLAND, 1"
-        "AQ_DRM_DEVICES,/dev/dri/card0:/dev/dri/card1"
+        "AQ_DRM_DEVICES,/dev/dri/card1:/dev/dri/card0"
         "GDK_SCALE,1"
         "QT_SCALE_FACTOR,1"
-        "EDITOR,nvim"
+        "EDITOR,nano"
+
+        "LIBVA_DRIVER_NAME, nvidia"
+        "WLR_NO_HARDWARE_CURSORS, 1"
+        "GBM_BACKEND, nvidia-drm"
       ];
     };
 
