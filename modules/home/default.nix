@@ -14,6 +14,7 @@
     ./zsh.nix
     ./zshrc-personal.nix
     ./zoxide.nix
+    ./packages.nix
 
     ./rofi
     ./hyprland

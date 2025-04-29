@@ -7,16 +7,19 @@
   extraMonitorSettings = ''
     # Samsung 4K monitor (DP-1)
     monitor=DP-5,3840x2160@60,0x0,1
-    
+
     # Asus 1080p monitor (DP-3)
     monitor=DP-4,1920x1080@60,3840x0,1
   '';
+
+  # waybar only ouputs on these monitors
+  waybarMonitors = [ "DP-5" ];
 
   timeZone = "America/Chicago";
   keyboardLayout = "us";
   consoleKeyMap = "us";
   terminal = "kitty";
-  
+
   browser = "firefox";
 
   stylixImage = ../../wallpapers/darkcityscape.jpg;
@@ -49,7 +52,7 @@
       port = 7878;
     }
   ];
-  
+
   gpu-bypass = {
     enable = false;
     # RTX 3070 Ti
