@@ -19,7 +19,7 @@
   
   browser = "firefox";
 
-  stylixImage = ../../wallpapers/pexels-pixabay-326055.jpg;
+  stylixImage = ../../wallpapers/darkcityscape.jpg;
 
   services = [
     {
