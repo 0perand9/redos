@@ -1,5 +1,5 @@
 {
-  gitUsername = "Michael Jacques";
+  gitUsername = "0perand9";
   gitEmail = "0perand9@gmail.com";
 
   hostname = "nixos-desktop";
@@ -20,6 +20,7 @@
   browser = "firefox";
 
   stylixImage = ../../wallpapers/darkcityscape.jpg;
+  wallpaper = "darkcityscape.jpg";
 
   services = [
     {

@@ -5,9 +5,11 @@
   ...
 }:
 let
+
   inherit (import ../../../hosts/${host}/variables.nix)
     extraMonitorSettings
     keyboardLayout
+    wallpaper
     ;
 in
 {
@@ -22,7 +24,7 @@ in
         "nm-applet --indicator"
         "lxqt-policykit-agent"
         "pypr &"
-        "sleep 1.5 && swww img /home/${username}/Pictures/Wallpapers/1249674.jpg"
+        "sleep 1.5 && swww img /home/${username}/Pictures/Wallpapers/${wallpaper}"
         "clipse -listen"
       ];
 
