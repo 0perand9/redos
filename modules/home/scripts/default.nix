@@ -10,5 +10,6 @@
     (import ./keybinds.nix { inherit pkgs; })
     (import ./wallsetter.nix { inherit pkgs; })
     (import ./screenshootin.nix { inherit pkgs; })
+    (import ./check-mullvad.nix { inherit pkgs; })
   ];
 }
