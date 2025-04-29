@@ -22,7 +22,7 @@ in
         "nm-applet --indicator"
         "lxqt-policykit-agent"
         "pypr &"
-        "sleep 1.5 && swww img /home/${username}/Pictures/Wallpapers/mountainscapedark.jpg"
+        "sleep 1.5 && swww img /home/${username}/Pictures/Wallpapers/1249674.jpg"
         "clipse -listen"
       ];
 
@@ -187,12 +187,12 @@ in
         #"nofocus, class:^(.*jetbrains.*)$, title:^(win.*)$"
         #"nofocus, class:^(.*jetbrains.*)$, title:^\\s$"
         
-        "center 1, class:^(jetbrains-.*)$,floating:1"
-        "float, class:^(jetbrains-.*)$,title:^(win.*)$"
-        "float, class:^(jetbrains-.*)$,title:^(dialog.*)$"
-        "float, class:^(jetbrains-.*)$,title:^(popup.*)$"
-        "float, class:^(jetbrains-.*)$,title:^(.*confirmation.*)$"
-        "float, class:^(jetbrains-.*)$,title:^(.*Choose.*)$"
+        #"center 1, class:^(jetbrains-.*)$,floating:1"
+        #"float, class:^(jetbrains-.*)$,title:^(win.*)$"
+        #"float, class:^(jetbrains-.*)$,title:^\\s$"
+        #"float, class:^(jetbrains-.*)$,title:^(popup.*)$"
+        #"float, class:^(jetbrains-.*)$,title:^(.*confirmation.*)$"
+        #"float, class:^(jetbrains-.*)$,title:^(.*Choose.*)$"
       ];
 
       env = [
