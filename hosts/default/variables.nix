@@ -22,8 +22,8 @@
 
   browser = "firefox";
 
-  stylixImage = ../../wallpapers/white-cityscape.jpg;
-  wallpaper = "white-cityscape.jpg";
+  stylixImage = ../../wallpapers/darkcolorfulhighway.jpg;
+  wallpaper = "darkcolorfulhighway.jpg";
 
   services = [
     {
