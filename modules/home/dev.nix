@@ -6,11 +6,13 @@
 }:
 let
   additionalJDKs = with pkgs; [
-    openjdk11
-    zulu8
     openjdk8
+    zulu8
     jdk8
+    openjdk11
+    
     (jdk17.override { enableJavaFX = true; })
+    (jdk21.override { enableJavaFX = true; })
   ];
 in
 {
@@ -27,6 +29,8 @@ in
   );
 
   home.packages = with pkgs; [
+    javaPackages.openjfx21
+
     kdePackages.kalarm
 
     postgresql
@@ -49,7 +53,6 @@ in
     chromium
     # chromedriver-op
 
-    openjfx # provides JavaFX libraries
     xorg.libXxf86vm # required native library for JavaFX
 
     ghidra

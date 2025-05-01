@@ -7,7 +7,7 @@
 }:
 {
   boot = {
-    kernelPackages = pkgs.linuxPackages_6_6;
+    kernelPackages = pkgs.linuxPackages_6_14;
     kernelModules = lib.mkAfter [ "v4l2loopback" ];
     extraModulePackages = [ config.boot.kernelPackages.v4l2loopback ];
     kernel.sysctl = {

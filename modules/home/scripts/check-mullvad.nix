@@ -1,24 +1,23 @@
-{ pkgs, ... }:
+{ pkgs }:
+
 pkgs.writeShellScriptBin "check-mullvad" ''
-
-    #!${pkgs.bash}/bin/bash
-
-    # Primary method: Check Mullvad CLI status
-    if command -v mullvad >/dev/null && mullvad status | grep -q "Connected"; then
-      # Get additional connection details for tooltip
-      MULLVAD_STATUS=$(mullvad status)
-      SERVER=$(echo "$MULLVAD_STATUS" | grep -o "Relay: *.*" | sed 's/Relay: *//')
-      LOCATION=$(echo "$MULLVAD_STATUS" | grep -o "Visible location: *.*" | sed 's/Visible location: *//')
-      
-      # Output for Waybar
-      echo "🔒"
-      echo "🔒"
-      echo "Connected to $SERVER ($LOCATION)"
-      exit 0
-    fi
-
-    # Fallback method: Not connected
-    echo "🔓"
-    echo "🔓"
-    echo "Not connected to Mullvad VPN"
-    ``;
+  #!${pkgs.bash}/bin/bash
+  
+  LOCATION_DATA=$(${pkgs.curl}/bin/curl -sf 'http://ip-api.com/json/?fields=city,regionName,countryCode')
+  
+  if [ $? -eq 0 ]; then
+    CITY=$(echo "$LOCATION_DATA" | ${pkgs.jq}/bin/jq -r '.city')
+    REGION=$(echo "$LOCATION_DATA" | ${pkgs.jq}/bin/jq -r '.regionName')
+    COUNTRY=$(echo "$LOCATION_DATA" | ${pkgs.jq}/bin/jq -r '.countryCode')
+    
+    LOCATION_STRING="$CITY, $REGION, $COUNTRY"
+  else
+    LOCATION_STRING="Unknown"
+  fi
+  
+  if command -v mullvad >/dev/null && mullvad status | grep -q "Connected"; then
+    echo "🔒 $LOCATION_STRING"
+  else
+    echo "🔓 $LOCATION_STRING"
+  fi
+''

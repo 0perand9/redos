@@ -6,5 +6,6 @@
 }:{
   home.packages = with pkgs; [
     trezor-suite
+    heroic
   ];
 }

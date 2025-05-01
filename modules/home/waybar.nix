@@ -33,6 +33,7 @@ with lib;
           "custom/hyprbindings"
           "custom/notification"
           "custom/exit"
+          "custom/vpn-location"
           "battery"
           "tray"
           "clock"
@@ -115,19 +116,13 @@ with lib;
           };
           on-click = "sleep 0.1 && pavucontrol";
         };
-        "custom/location" = {
-          format = " {}";
-          exec = "curl -sf 'http://ip-api.com/json/?fields=city' | jq -r '.city'";
-          interval = 30;
-          tooltip = false;
-        };
-
-        "custom/vpn" = {
+        "custom/vpn-location" = {
           format = "{}";
-          exec = "if ip link show | grep -E 'tun|wg|vpn' >/dev/null; then echo ''; else echo ''; fi";
+          exec = "check-mullvad";
           interval = 5;
           tooltip = true;
           tooltip-format = "VPN Connection Status";
+          on-click = "mullvad-vpn";
         };
         "custom/exit" = {
           tooltip = false;
@@ -274,6 +269,15 @@ with lib;
         #custom-notification, #tray, #custom-exit {
           font-weight: bold;
           background: #${config.lib.stylix.colors.base0F};
+          color: #${config.lib.stylix.colors.base00};
+          margin: 4px 0px;
+          margin-right: 7px;
+          border-radius: 10px 24px 10px 24px;
+          padding: 0px 18px;
+        }
+        #custom-vpn-location {
+          font-weight: bold;
+          background: #${config.lib.stylix.colors.base0D};
           color: #${config.lib.stylix.colors.base00};
           margin: 4px 0px;
           margin-right: 7px;
