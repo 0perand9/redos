@@ -1,8 +1,12 @@
 {
   pkgs,
   username,
+  host,
   ...
-}: {
+}: let
+    inherit (import ../../../hosts/${host}/variables.nix)
+    browser;
+in {
   home.packages = with pkgs; [
     swww
     grim
@@ -48,7 +52,7 @@
       show_link = false
       scrollbar = "never"
       auto_redirect = false
-      http = 'brave'
+      http = '${browser}'
       search = "gemini://gus.guru/search"
       max_width = 140
       page_max_size = 2097152  # 2 MiB

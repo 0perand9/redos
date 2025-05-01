@@ -19,7 +19,6 @@
     greetd.wlgreet
     wineWowPackages.waylandFull
     winetricks
-    brave
     clipse
     lutris
     eza
