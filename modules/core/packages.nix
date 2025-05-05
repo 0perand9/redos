@@ -1,4 +1,10 @@
-{ pkgs, inputs, ... }:
+{ pkgs, inputs, config, ... }:
+let
+  unstable = import inputs.nixpkgs-unstable {
+    system = pkgs.system;
+    config = config.nixpkgs.config;
+  };
+in
 {
   programs = {
     virt-manager.enable = true;
@@ -31,6 +37,11 @@
     usbutils
     vlc
     wget
+
+    tealdeer
+    wikiman
+
+    unstable.code-cursor
 
     xorg.libX11
     xorg.libXrender
