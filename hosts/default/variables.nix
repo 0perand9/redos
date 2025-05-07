@@ -5,15 +5,16 @@
   hostname = "nixos-desktop";
 
   extraMonitorSettings = ''
-    # Samsung 4K monitor (DP-1)
+    # Samsung 4K monitor (DP-5)
     monitor=DP-5,3840x2160@60,0x0,1
 
-    # Asus 1080p monitor (DP-3)
+    # Asus 1080p monitor (DP-4)
     monitor=DP-4,1920x1080@60,3840x0,1
   '';
 
-  # waybar only ouputs on these monitors
-  waybarMonitors = [ "DP-5" ];
+  
+  mainMonitor = "DP-5";        # tells hyprlock to just have the input on this monitor
+  waybarMonitors = [ "DP-5" ]; # waybar only ouputs on these monitors
 
   timeZone = "America/Chicago";
   keyboardLayout = "us";

@@ -29,8 +29,8 @@ in {
       source = ../../../wallpapers;
       recursive = true;
     };
-    ".face.icon".source = ./face.jpg;
-    ".config/face.jpg".source = ./face.jpg;
+    # ".face.icon".source = ./face.jpg;
+    # ".config/face.jpg".source = ./face.jpg;
     ".config/swappy/config".text = ''
       [Default]
       save_dir=/home/${username}/Pictures/Screenshots

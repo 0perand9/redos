@@ -39,8 +39,7 @@ in
     wget
 
     tealdeer
-    wikiman
-
+    
     unstable.code-cursor
 
     xorg.libX11
