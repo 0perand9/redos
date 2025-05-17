@@ -5,16 +5,15 @@
   hostname = "nixos-desktop";
 
   extraMonitorSettings = ''
-    # Samsung 4K monitor (DP-5)
-    monitor=DP-5,3840x2160@60,0x0,1
+    # Samsung 4K monitor (DP-2)
+    monitor=DP-2,3840x2160@60,0x0,1
 
-    # Asus 1080p monitor (DP-4)
-    monitor=DP-4,1920x1080@60,3840x0,1
+    # Asus 1080p monitor (DP-1)
+    monitor=DP-1,1920x1080@60,3840x0,1
   '';
 
-  
-  mainMonitor = "DP-5";        # tells hyprlock to just have the input on this monitor
-  waybarMonitors = [ "DP-5" ]; # waybar only ouputs on these monitors
+  mainMonitor = "DP-2";        # tells hyprlock to just have the input on this monitor
+  waybarMonitors = [ "DP-2" ]; # waybar only ouputs on these monitors
 
   timeZone = "America/Chicago";
   keyboardLayout = "us";
@@ -23,8 +22,7 @@
 
   browser = "firefox";
 
-  stylixImage = ../../wallpapers/raindrops.jpg;
-  wallpaper = "raindrops.jpg";
+  wallpaper = "vaporwave-purple.jpg";
 
   services = [
     {
@@ -55,11 +53,11 @@
   ];
 
   gpu-bypass = {
-    enable = false;
+    enable = true;
     # RTX 3070 Ti
     gpuIds = [
-      "10de:2484" # Graphics
-      "10de:228b" # Audio
+      "10de:1c03" # Graphics
+      "10de:10f1" # Audio
     ];
   };
 }

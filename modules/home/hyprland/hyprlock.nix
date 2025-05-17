@@ -27,7 +27,6 @@ in
       ];
       line = [
         {
-          # TEST lmfaoo
           color = "rgb(${config.lib.stylix.colors.base0D})";
           thickness = 4;
           position = "0, -35";
@@ -42,22 +41,22 @@ in
           font_size = 50;
           font_family = "Noto Sans";
           color = "rgb(${config.lib.stylix.colors.base05})";
-          position = "0, 180";
-          halign = "center";
-          valign = "center";
-        }
-        {
-          text = "cmd[update:1000] echo $(date '+%I:%M:%S %p')";
-          font_size = 45;
-          font_family = "Noto Sans";
-          color = "rgb(${config.lib.stylix.colors.base05})";
-          position = "0, 125";
+          position = "0, 160";
           halign = "center";
           valign = "center";
         }
         {
           text = "cmd[update:1000] echo $(date '+%A, %d %B %Y')";
-          font_size = 20;
+          font_size = 30;
+          font_family = "Noto Sans";
+          color = "rgb(${config.lib.stylix.colors.base05})";
+          position = "0, 110";
+          halign = "center";
+          valign = "center";
+        }
+        {
+          text = "cmd[update:1000] echo $(date '+%I:%M:%S %p')";
+          font_size = 30;
           font_family = "Noto Sans";
           color = "rgb(${config.lib.stylix.colors.base05})";
           position = "0, 65";

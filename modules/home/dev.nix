@@ -7,9 +7,14 @@
 let
   additionalJDKs = with pkgs; [
     openjdk8
+    openjdk11
     zulu8
     jdk8
-    openjdk11
+
+    zulu11
+
+    javaPackages.openjfx21
+    javaPackages.openjfx17
     
     (jdk17.override { enableJavaFX = true; })
     (jdk21.override { enableJavaFX = true; })
@@ -29,8 +34,6 @@ in
   );
 
   home.packages = with pkgs; [
-    javaPackages.openjfx21
-
     kdePackages.kalarm
 
     postgresql

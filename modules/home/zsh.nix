@@ -64,6 +64,8 @@
       ll = "eza --icons -lh --group-directories-first -1 --no-user --long";
       la = "eza --icons -lah --group-directories-first -1";
       tree = "eza --icons --tree --group-directories-first";
+      nix-shell = "nix-shell --command zsh";
+      looking-glass-client = "__NV_DISABLE_EXPLICIT_SYNC=1 looking-glass-client";
     };
   };
 }

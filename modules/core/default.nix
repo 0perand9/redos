@@ -1,7 +1,7 @@
 { inputs, ... }:
 {
   imports = [
-    #./virtualisation
+    ./virtualisation
     ./packages.nix
     ./boot.nix
     ./discord.nix #maybe move to home
@@ -13,6 +13,7 @@
     ./networking.nix
     ./arr-proxy.nix
     ./user.nix
+    ./printing.nix
     ./postgresql.nix
     ./stylix.nix
     ./steam.nix

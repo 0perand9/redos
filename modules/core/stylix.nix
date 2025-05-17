@@ -3,12 +3,12 @@
   host,
   ...
 }: let
-  inherit (import ../../hosts/${host}/variables.nix) stylixImage;
+  inherit (import ../../hosts/${host}/variables.nix) wallpaper;
 in {
   # Styling Options
   stylix = {
     enable = true;
-    image = stylixImage;
+    image = ../../wallpapers/${wallpaper};
     # base16Scheme = {
     #   base00 = "282936";
     #   base01 = "3a3c4e";

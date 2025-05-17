@@ -1,4 +1,9 @@
-{ pkgs, inputs, config, ... }:
+{
+  pkgs,
+  inputs,
+  config,
+  ...
+}:
 let
   unstable = import inputs.nixpkgs-unstable {
     system = pkgs.system;
@@ -6,6 +11,9 @@ let
   };
 in
 {
+  nixpkgs.config.permittedInsecurePackages = [
+    "electron-33.4.11"
+  ];
   programs = {
     virt-manager.enable = true;
     firefox.enable = true;
@@ -38,8 +46,14 @@ in
     vlc
     wget
 
+    unetbootin
+
+    cups
+    cups-filters
+    system-config-printer
+
     tealdeer
-    
+
     unstable.code-cursor
 
     xorg.libX11

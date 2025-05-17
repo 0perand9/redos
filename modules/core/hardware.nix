@@ -9,5 +9,6 @@
     graphics.enable = true;
     bluetooth.enable = true;
     bluetooth.powerOnBoot = true;
+    xone.enable = true;
   };
 }
