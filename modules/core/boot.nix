@@ -39,7 +39,7 @@
     ];
     loader.grub = {
       enable = true;
-      device = "/dev/nvme0n1";
+      device = "/dev/disk/by-id/nvme-Samsung_SSD_990_PRO_2TB_S7L9NJ0Y421875V";
       useOSProber = true;
 
       theme =
@@ -62,6 +62,14 @@
         }
         menuentry "Shutdown" {
           halt
+        }
+        menuentry "Windows" {
+          insmod part_gpt
+          insmod fat
+          insmod search_fs_uuid
+          insmod chain
+          search --fs-uuid --set=root 262B-2D35
+          chainloader /EFI/Microsoft/Boot/bootmgfw.efi
         }
       '';
     };

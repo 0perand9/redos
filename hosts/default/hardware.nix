@@ -25,10 +25,12 @@
     extraModulePackages = [ ];
   };
 
-  fileSystems."/" = {
-    device = "/dev/disk/by-uuid/3efa53c6-0474-40b8-b50a-2bbb979a613a";
-    fsType = "ext4";
-  };
+
+  fileSystems."/" =
+    { device = "/dev/disk/by-label/nixos";
+      fsType = "ext4";
+    };
+
   fileSystems."/mnt/storage" = {
     device = "/dev/storage_pool/storage";
     fsType = "ext4";
