@@ -10,5 +10,6 @@
     bluetooth.enable = true;
     bluetooth.powerOnBoot = true;
     xone.enable = true;
+    xpadneo.enable = true;
   };
 }

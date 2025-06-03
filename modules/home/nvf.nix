@@ -1,4 +1,5 @@
 {
+  lib,
   inputs,
   config,
   ...
@@ -78,9 +79,9 @@
 
       theme = {
         enable = true;
-        name = "dracula";
+        name = lib.mkForce "dracula";
         style = "dark";
-        transparent = true;
+        transparent = lib.mkForce true;
       };
 
       telescope.enable = true;
@@ -90,6 +91,7 @@
       };
 
       lsp = {
+        enable = true;
         formatOnSave = true;
         lspkind.enable = false;
         lightbulb.enable = true;
@@ -102,7 +104,6 @@
       };
 
       languages = {
-        enableLSP = true;
         enableFormat = true;
         enableTreesitter = true;
         enableExtraDiagnostics = true;
@@ -129,7 +130,7 @@
       statusline = {
         lualine = {
           enable = true;
-          theme = "dracula";
+          theme = lib.mkForce "dracula";
         };
       };
 

@@ -1,6 +1,4 @@
 {...}:{
-  virtualisation.docker = {
-    enable = true;
-    enableNvidia = true;  # This is the key setting you need
-  };
+  virtualisation.docker.enable = true;
+  hardware.nvidia-container-toolkit.enable = true;
 }

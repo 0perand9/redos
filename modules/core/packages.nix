@@ -24,7 +24,7 @@ in
     xfce.thunar
     xfce.thunar-archive-plugin
     xfce.thunar-volman # For removable media support
-    gnome.file-roller # Archive backend for thunar-archive-plugin
+    file-roller # Archive backend for thunar-archive-plugin
 
     amfora # Fancy Terminal Browser For Gemini Protocol
     pavucontrol # For Editing Audio Levels & Devices

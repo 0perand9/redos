@@ -26,7 +26,7 @@ in
 
   services.perplexica = {
     enable = true;
-    ollamaUrl = "http://192.168.1.210:11434";
+    ollamaUrl = "http://localhost:11434";
   };
 
   imports = [ ./perplexica.nix ];

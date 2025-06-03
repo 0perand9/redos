@@ -15,7 +15,7 @@ let
 
     javaPackages.openjfx21
     javaPackages.openjfx17
-    
+
     (jdk17.override { enableJavaFX = true; })
     (jdk21.override { enableJavaFX = true; })
   ];
@@ -35,6 +35,8 @@ in
 
   home.packages = with pkgs; [
     kdePackages.kalarm
+
+    gitui
 
     postgresql
 
@@ -62,7 +64,7 @@ in
 
     # jdk11
 
-    nodejs_18
+    nodejs_22
     nodePackages.vercel
 
     python311

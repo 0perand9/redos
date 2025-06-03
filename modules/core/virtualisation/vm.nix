@@ -1,4 +1,9 @@
-{ pkgs, lib, username, ... }:
+{
+  pkgs,
+  lib,
+  username,
+  ...
+}:
 {
   virtualisation = {
     spiceUSBRedirection.enable = true;
@@ -6,6 +11,13 @@
       enable = true;
       onBoot = "ignore";
       onShutdown = "shutdown";
+      qemu = {
+        package = pkgs.qemu_kvm;
+        ovmf = {
+          enable = true;
+          packages = [ pkgs.OVMF.fd ];
+        };
+      };
     };
   };
 

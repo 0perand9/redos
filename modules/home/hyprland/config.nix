@@ -182,13 +182,15 @@ in
         "keepaspectratio, title:^(Picture-in-Picture)$"
         "noblur, tag:games*"
         "fullscreen, tag:games*"
+        "nofocus, class:^(.*jetbrains.*)$, title:^(win.*)$"
+        "noinitialfocus, class:^(.*jetbrains.*)$, title:^(win.*)$"
 
         # intellij fixes
         #"noinitialfocus, class:^(.*jetbrains.*)$, title:^(win.*)$"
         #"noinitialfocus, class:^(.*jetbrains.*)$, title:^\\s$"
         #"nofocus, class:^(.*jetbrains.*)$, title:^(win.*)$"
         #"nofocus, class:^(.*jetbrains.*)$, title:^\\s$"
-        
+
         #"center 1, class:^(jetbrains-.*)$,floating:1"
         #"float, class:^(jetbrains-.*)$,title:^(win.*)$"
         #"float, class:^(jetbrains-.*)$,title:^\\s$"

@@ -2,12 +2,13 @@
   description = "RedOs";
   inputs = {
     home-manager = {
-      url = "github:nix-community/home-manager/release-24.11";
+      url = "github:nix-community/home-manager/release-25.05";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    nixpkgs.url = "github:nixos/nixpkgs/release-24.11";
+    nixpkgs.url = "github:nixos/nixpkgs/release-25.05";
+    stylix.url = "github:danth/stylix/release-25.05";
+
     nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
-    stylix.url = "github:danth/stylix/release-24.11";
     nvf.url = "github:notashelf/nvf";
     nix-comfyui.url = "github:dyscorv/nix-comfyui";
     yazi = {
@@ -16,7 +17,13 @@
     };
   };
   outputs =
-    { nixpkgs, nix-comfyui, nixpkgs-unstable, ... }@inputs:
+    {
+      nixpkgs,
+      nix-comfyui,
+      nixpkgs-unstable,
+      home-manager,
+      ...
+    }@inputs:
     let
       system = "x86_64-linux";
       host = "default";
@@ -38,19 +45,6 @@
         };
         modules = [
           ./profiles/nvidia
-          ({ pkgs, ... }: {
-            # Add the overlay to make comfyuiPackages available
-            nixpkgs.overlays = [ nix-comfyui.overlays.default ];
-            
-            # Add ComfyUI to system packages
-            environment.systemPackages = with pkgs; [
-              # Basic ComfyUI
-              comfyuiPackages.comfyui
-              
-              # OR ComfyUI with extensions (uncomment if you want all extensions)
-              # comfyuiPackages.comfyui-with-extensions
-            ];
-          })
         ];
       };
     };
