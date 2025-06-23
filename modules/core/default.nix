@@ -19,6 +19,7 @@
     ./steam.nix
     ./fonts.nix
     ./xdg.nix
+    ./emulation.nix
 
     ./ai
     inputs.stylix.nixosModules.stylix

@@ -14,7 +14,6 @@
     ./zshrc-personal.nix
     ./zoxide.nix
     ./packages.nix
-    ./emulation.nix
 
     ./rofi
     ./hyprland
