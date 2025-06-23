@@ -7,7 +7,6 @@
     ./git.nix
     ./htop.nix
     ./kitty.nix
-    ./nvf.nix
     ./stylix.nix
     ./waybar.nix
     ./starship.nix
@@ -15,6 +14,7 @@
     ./zshrc-personal.nix
     ./zoxide.nix
     ./packages.nix
+    ./emulation.nix
 
     ./rofi
     ./hyprland

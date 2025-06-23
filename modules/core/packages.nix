@@ -33,7 +33,7 @@ in
     greetd.wlgreet
     wineWowPackages.waylandFull
     winetricks
-    clipse
+    # clipse
     lutris
     eza
     rar
@@ -48,6 +48,8 @@ in
 
     unetbootin
 
+    cliphist
+
     cups
     cups-filters
     system-config-printer
@@ -55,6 +57,9 @@ in
     tealdeer
 
     unstable.code-cursor
+
+    gsettings-desktop-schemas
+    glib
 
     xorg.libX11
     xorg.libXrender

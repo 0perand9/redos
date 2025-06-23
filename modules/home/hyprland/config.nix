@@ -25,7 +25,9 @@ in
         "lxqt-policykit-agent"
         "pypr &"
         "sleep 1.5 && swww img /home/${username}/Pictures/Wallpapers/${wallpaper}"
-        "clipse -listen"
+
+        "wl-paste --type text --watch cliphist store" 
+        "wl-paste --type image --watch cliphist store"
       ];
 
       input = {

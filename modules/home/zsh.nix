@@ -5,7 +5,7 @@
     autosuggestion.enable = true;
     syntaxHighlighting.enable = true;
 
-    initContent = ''
+    initExtra = ''
       # Alt+h,j,k,l for navigation
       bindkey "\eh" backward-word
       bindkey "\ej" down-line-or-history
@@ -46,9 +46,10 @@
 
       # Ctrl+L to clear screen
       bindkey -s '^L' 'clear\n'
+
       if [ -f $HOME/.zshrc-personal ]; then
          source $HOME/.zshrc-personal
-       fi
+      fi
     '';
 
     shellAliases = {

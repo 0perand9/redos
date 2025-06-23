@@ -2,9 +2,11 @@
   pkgs,
   host,
   ...
-}: let
+}:
+let
   inherit (import ../../hosts/${host}/variables.nix) wallpaper;
-in {
+in
+{
   # Styling Options
   stylix = {
     enable = true;

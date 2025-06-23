@@ -8,14 +8,12 @@ let
   additionalJDKs = with pkgs; [
     openjdk8
     openjdk11
-    zulu8
     jdk8
 
     zulu11
 
-    javaPackages.openjfx21
-    javaPackages.openjfx17
-
+    (zulu17.override { enableJavaFX = true; })
+    (zulu8.override { enableJavaFX = true; })
     (jdk17.override { enableJavaFX = true; })
     (jdk21.override { enableJavaFX = true; })
   ];
@@ -44,11 +42,14 @@ in
     nixfmt-rfc-style
 
     jetbrains.idea-ultimate
-    # jetbrains.rust-roverCache
+    jetbrains.rust-rover
     jetbrains.datagrip
 
+    cargo
+    gcc
+
     gh
-    docker
+    docker_28
     maven
 
     makemkv

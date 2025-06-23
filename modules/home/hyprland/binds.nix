@@ -20,7 +20,7 @@ in {
       "$modifier,C,exec,hyprpicker -a"
       "$modifier,G,exec,gimp"
       "$modifier,T,exec,pypr toggle term"
-      "$modifier,V,exec,${terminal} --class clipse -e 'clipse'"
+      # "$modifier,V,exec,${terminal} --class clipse -e 'clipse'"
       "$modifier SHIFT,T,exec,pypr toggle thunar"
       "$modifier,M,exec,pavucontrol"
       "$modifier,Q,killactive,"
