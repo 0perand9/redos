@@ -8,7 +8,9 @@ let
   additionalJDKs = with pkgs; [
     openjdk8
     openjdk11
+    
     jdk8
+    temurin-bin-24
 
     zulu11
 
@@ -32,6 +34,9 @@ in
   );
 
   home.packages = with pkgs; [
+    nss
+    nspr
+
     kdePackages.kalarm
 
     gitui
@@ -40,6 +45,8 @@ in
 
     vscode
     nixfmt-rfc-style
+
+    recaf-launcher
 
     jetbrains.idea-ultimate
     jetbrains.rust-rover

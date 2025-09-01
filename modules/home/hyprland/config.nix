@@ -151,6 +151,7 @@ in
         "idleinhibit fullscreen, fullscreen:1"
         "float, tag:settings*"
         "float, class:^([Ff]erdium)$"
+        "float, title:^(RuneScape)$"
         "float, title:^(Picture-in-Picture)$"
         "float, class:^(mpv|com.github.rafostar.Clapper)$"
         "float, title:^(Authentication Required)$"
@@ -165,6 +166,7 @@ in
         "float, class:(looking-glass-client)"
         "float, class:(.virt-manager-wrapped)"
         "float, class:(org-rspeer-Inubot)"
+        "float, class:(org-dreambot-Boot)"
         "size 70% 60%, initialTitle:(Open Files)"
         "size 70% 60%, initialTitle:(Add Folder to Workspace)"
         "size 70% 70%, tag:settings*"
@@ -184,8 +186,8 @@ in
         "keepaspectratio, title:^(Picture-in-Picture)$"
         "noblur, tag:games*"
         "fullscreen, tag:games*"
-        "nofocus, class:^(.*jetbrains.*)$, title:^(win.*)$"
-        "noinitialfocus, class:^(.*jetbrains.*)$, title:^(win.*)$"
+
+        "workspace 5 silent, class:^(org-rspeer-Inubot)$"
 
         # intellij fixes
         #"noinitialfocus, class:^(.*jetbrains.*)$, title:^(win.*)$"

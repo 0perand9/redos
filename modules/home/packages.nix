@@ -14,7 +14,7 @@
 
     stockfish
     pychess
-    
+
     gamescope
     vulkan-loader
     vulkan-validation-layers
@@ -23,10 +23,12 @@
     wayland
     wayland-protocols
     libdecor
-    
+
     libxkbcommon
     xorg.libX11
     xorg.libXcursor
     xorg.libXrandr
+
+    runelite
   ];
 }

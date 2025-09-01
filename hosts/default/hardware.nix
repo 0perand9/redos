@@ -25,16 +25,31 @@
     extraModulePackages = [ ];
   };
 
+  age.secrets.truenas-creds = {
+    file = ../../secrets/truenas-creds.age;  # Adjust path as needed
+    mode = "600";
+  };
+  environment.systemPackages = with pkgs; [
+    cifs-utils
+  ];
 
   fileSystems."/" =
     { device = "/dev/disk/by-label/nixos";
       fsType = "ext4";
     };
 
-  fileSystems."/mnt/storage" = {
-    device = "/dev/storage_pool/storage";
-    fsType = "ext4";
-    options = [ "defaults" ];
+  fileSystems."/mnt/truenas" = {
+   device = "//192.168.1.99/file_shared";
+   fsType = "cifs";
+    options = [
+      "credentials=${config.age.secrets.truenas-creds.path}"
+      "uid=3000"
+      "gid=3000"  # users group
+      "iocharset=utf8"
+      "file_mode=0777"
+      "dir_mode=0777"
+      "vers=3.0"
+    ];
   };
 
   swapDevices = [ ];

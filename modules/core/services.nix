@@ -8,6 +8,7 @@
     gvfs.enable = true; # For Mounting USB & More
     blueman.enable = true; # Bluetooth Support
     tumbler.enable = true; # Image/video preview
+    flatpak.enable = true;
     gnome.gnome-keyring.enable = true;
     smartd = {
       enable = true; # this cannot be enabled if on a vm

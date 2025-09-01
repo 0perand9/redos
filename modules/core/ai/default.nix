@@ -1,4 +1,10 @@
-{ config, pkgs, inputs, ... }:
+{
+  config,
+  pkgs,
+  inputs,
+  lib,
+  ...
+}:
 
 let
   unstable = import inputs.nixpkgs-unstable {
@@ -7,7 +13,15 @@ let
   };
 in
 {
-  environment.systemPackages = with pkgs; [ unstable.ollama ];
+  environment.variables = lib.mkForce {
+    VLLM_TARGET_DEVICE = "cuda";
+    CUDA_HOME = "${pkgs.cudaPackages.cuda_nvcc}";
+    LD_LIBRARY_PATH = "${pkgs.cudatoolkit}/lib:${pkgs.cudaPackages.cuda_cudart}/lib";
+  };
+  environment.systemPackages = with pkgs; [
+    unstable.ollama
+    unstable.vllm
+  ];
 
   # Ollama configuration
   services.ollama = {
@@ -21,7 +35,7 @@ in
 
   services.open-webui = {
     enable = true;
-    # package = unstable.open-webui;
+    package = unstable.open-webui;
   };
 
   services.perplexica = {

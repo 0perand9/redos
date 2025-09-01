@@ -33,22 +33,41 @@
     {
       name = "emby";
       port = 8096;
+      host = "192.168.1.99";
+    }
+    {
+      name = "jellyseerr";
+      port = 5055;
+      host = "192.168.1.99";
+    }
+    {
+      name = "nzb";
+      port = 6789;
+      host = "192.168.1.99";
     }
     {
       name = "torrents";
       port = 9091;
+      host = "192.168.1.99";
     }
     {
       name = "prowlarr";
       port = 9696;
+      host = "192.168.1.99";
     }
     {
       name = "sonarr";
       port = 8989;
+      host = "192.168.1.99";
     }
     {
       name = "radarr";
       port = 7878;
+      host = "192.168.1.99";
+    }
+    {
+      name = "botbuddy";
+      port = 8881;
     }
   ];
 

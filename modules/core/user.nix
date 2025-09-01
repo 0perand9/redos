@@ -21,6 +21,9 @@
         ;
     }; 
     users.${username} = {
+      gtk = {
+        enable = true;
+      };
       imports = [ ./../home ];
       home = {
         username = "${username}";

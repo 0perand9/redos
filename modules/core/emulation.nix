@@ -1,19 +1,19 @@
-{ pkgs, unstable, ... }:
+{ pkgs, inputs, config, ... }:
+let
+  unstable = import inputs.nixpkgs-unstable {
+    system = pkgs.system;
+    config = config.nixpkgs.config;
+  };
+in
 {
   # Install emulation packages
   environment.systemPackages = with pkgs; [
-    # NES/Famicom emulation
-    fceux # Full-featured NES emulator
-
-    # SNES/Super Famicom emulation
-    snes9x # Popular SNES emulator
-
-    # N64 emulation
-    mupen64plus # Modular N64 emulator
+    # RetroArch with cores for older systems
+    retroarch-free
+    ryubing
 
     # GameCube/Wii emulation
-    dolphin-emu # The premier GameCube/Wii emulator
-
+    dolphin-emu
     unstable.shadps4
   ];
 }
