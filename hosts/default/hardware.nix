@@ -24,33 +24,32 @@
     kernelModules = [ "kvm-amd" ];
     extraModulePackages = [ ];
   };
-
+  age.identityPaths = [ "/home/red/.ssh/id_ed25519" ];
   age.secrets.truenas-creds = {
-    file = ../../secrets/truenas-creds.age;  # Adjust path as needed
+    file = ../../secrets/truenas-creds.age; # Adjust path as needed
     mode = "600";
   };
   environment.systemPackages = with pkgs; [
     cifs-utils
   ];
 
-  fileSystems."/" =
-    { device = "/dev/disk/by-label/nixos";
-      fsType = "ext4";
-    };
-
-  fileSystems."/mnt/truenas" = {
-   device = "//192.168.1.99/file_shared";
-   fsType = "cifs";
-    options = [
-      "credentials=${config.age.secrets.truenas-creds.path}"
-      "uid=3000"
-      "gid=3000"  # users group
-      "iocharset=utf8"
-      "file_mode=0777"
-      "dir_mode=0777"
-      "vers=3.0"
-    ];
+  fileSystems."/" = {
+    device = "/dev/disk/by-label/nixos";
+    fsType = "ext4";
   };
+
+  systemd.mounts = [{
+    what = "//192.168.1.99/file_shared";
+    where = "/mnt/truenas";
+    type = "cifs";
+    options = "credentials=${config.age.secrets.truenas-creds.path},uid=1000,gid=100,file_mode=0777,dir_mode=0777,vers=2.1";
+  }];
+
+  systemd.automounts = [{
+    where = "/mnt/truenas";
+    wantedBy = [ "multi-user.target" ];
+  }];
+
 
   swapDevices = [ ];
 
