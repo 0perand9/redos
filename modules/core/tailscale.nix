@@ -11,6 +11,11 @@ let
   };
 in
 {
+  age.secrets.tailscale-creds = {
+    file = ../../secrets/tailscale-creds.age;
+    mode = "600";
+  };
+
   #TODO remove this when github.com/nixos/nixpkgs/issues/438765 is resolved.
   nixpkgs.overlays = [
     (final: prev: {
@@ -22,5 +27,8 @@ in
   environment.systemPackages = with pkgs; [
     unstable.tailscale
   ];
-  services.tailscale.enable = true;
+  services.tailscale = {
+    enable = true;
+    authKeyFile = config.age.secrets.tailscale-creds.path;
+  };
 }

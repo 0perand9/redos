@@ -3,4 +3,5 @@ let
 in
 {
   "truenas-creds.age".publicKeys = [ system ];
-}
+  "tailscale-creds.age".publicKeys = [ system ];
+} 
