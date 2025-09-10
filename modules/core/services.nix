@@ -10,6 +10,7 @@
     tumbler.enable = true; # Image/video preview
     flatpak.enable = true;
     gnome.gnome-keyring.enable = true;
+    tailscale.enable = true;
     smartd = {
       enable = true; # this cannot be enabled if on a vm
       autodetect = true;

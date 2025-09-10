@@ -35,7 +35,7 @@ in
 
   services.open-webui = {
     enable = true;
-    package = unstable.open-webui;
+    # package = unstable.open-webui;
   };
 
   services.perplexica = {

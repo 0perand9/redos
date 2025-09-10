@@ -20,13 +20,14 @@
     ./fonts.nix
     ./xdg.nix
     ./emulation.nix
+    ./tailscale.nix
 
     ./ai
     inputs.stylix.nixosModules.stylix
   ];
 
   # TODO remove these once we add our new ones!
-  # services.xserver.enable = true;
+  services.xserver.enable = true;
   # services.displayManager.sddm.enable = true;
   # services.desktopManager.plasma6.enable = true;
 }

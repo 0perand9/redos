@@ -20,6 +20,7 @@ in
   };
   nixpkgs.config.allowUnfree = true;
 
+  
   environment.systemPackages = with pkgs; [
     xfce.thunar
     xfce.thunar-archive-plugin
