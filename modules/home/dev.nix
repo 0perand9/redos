@@ -55,6 +55,9 @@ in
     cargo
     gcc
 
+    openjfx
+    gtk3
+
     gh
     docker_28
     maven
@@ -66,7 +69,7 @@ in
     chromium
     # chromedriver-op
 
-    xorg.libXxf86vm # required native library for JavaFX
+    xorg.libXxf86vm # required native library for JavaFXD
 
     ghidra
 
@@ -78,6 +81,7 @@ in
     python311
     python311Packages.requests
     python311Packages.rich
+    python311Packages.pip
 
     bytecode-viewer
   ];

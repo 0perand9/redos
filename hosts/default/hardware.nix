@@ -25,7 +25,8 @@
     extraModulePackages = [ ];
   };
   
-  age.identityPaths = [ "/home/red/.ssh/id_ed25519" ];
+  age.identityPaths = [ "/etc/ssh/ssh_host_ed25519_key" ];
+  
   age.secrets.truenas-creds = {
     file = ../../secrets/truenas-creds.age; # Adjust path as needed
     mode = "600";

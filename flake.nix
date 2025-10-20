@@ -44,6 +44,10 @@
           inherit username;
           inherit host;
           inherit profile;
+          unstable = import nixpkgs-unstable {
+            inherit system;
+            allowUnfree = true;
+          };
         };
         modules = [
           agenix.nixosModules.default

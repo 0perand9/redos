@@ -91,7 +91,7 @@
         {
           type = "gpu";
           format = "{1} {2} @ {12} GHz";
-          key = " ├ 󰢮 ";
+          key = " ├ 󰢮 ";   
           keyColor = "33";
         }
         {

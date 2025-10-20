@@ -22,7 +22,7 @@
 
   browser = "firefox";
 
-  wallpaper = "vaporwave-purple.jpg";
+  wallpaper = "rolls-royce-black.jpg";
 
   services = [
     {

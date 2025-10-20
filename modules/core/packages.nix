@@ -19,8 +19,6 @@ in
     firefox.enable = true;
   };
   nixpkgs.config.allowUnfree = true;
-
-  
   environment.systemPackages = with pkgs; [
     xfce.thunar
     xfce.thunar-archive-plugin
@@ -46,6 +44,8 @@ in
     usbutils
     vlc
     wget
+
+    unstable.zulu25
 
     unetbootin
 
@@ -75,5 +75,16 @@ in
     libGL
 
     inputs.yazi.packages.${pkgs.system}.yazi # TUI FileMgr
+
+    gimp
+
+    unstable.lsfg-vk
+    unstable.lsfg-vk-ui
+    
+    prismlauncher
+    mangohud
+
+    #hypr tools
+    hyprpicker
   ];
 }

@@ -2,6 +2,7 @@
   lib,
   pkgs,
   config,
+  unstable,
   ...
 }:
 with lib;
@@ -56,7 +57,7 @@ in
           intelBusId = "PCI:4:0:0";
         };
 
-        package = config.boot.kernelPackages.nvidiaPackages.latest;
+        # package = unstable.linuxPackages.nvidiaPackages.production;
 
         # package = config.boot.kernelPackages.nvidiaPackages.mkDriver {
         #   version = "570.144";
@@ -66,6 +67,16 @@ in
         #   settingsSha256 = "sha256-VcCa3P/v3tDRzDgaY+hLrQSwswvNhsm93anmOhUymvM=";
         #   persistencedSha256 = "sha256-hx4w4NkJ0kN7dkKDiSOsdJxj9+NZwRsZEuhqJ5Rq3nM=";
         # };
+
+        package = config.boot.kernelPackages.nvidiaPackages.mkDriver {
+          version = "580.82.09";
+          sha256_64bit = "sha256-Puz4MtouFeDgmsNMKdLHoDgDGC+QRXh6NVysvltWlbc=";
+          sha256_aarch64 = "sha256-Puz4MtouFeDgmsNMKdLHoDgDGC+QRXh6NVysvltWlbc=";
+          
+          openSha256 = "sha256-Puz4MtouFeDgmsNMKdLHoDgDGC+QRXh6NVysvltWlbc=";
+          settingsSha256 = "sha256-um53cr2Xo90VhZM1bM2CH4q9b/1W2YOqUcvXPV6uw2s=";
+          persistencedSha256 = lib.fakeSha256;
+        };
 
       };
     };

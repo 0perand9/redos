@@ -20,7 +20,6 @@ in
   };
   environment.systemPackages = with pkgs; [
     unstable.ollama
-    unstable.vllm
   ];
 
   # Ollama configuration

@@ -14,6 +14,6 @@ in
 
     # GameCube/Wii emulation
     dolphin-emu
-    unstable.shadps4
+    shadps4
   ];
 }
