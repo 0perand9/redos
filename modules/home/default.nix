@@ -13,6 +13,7 @@
     ./zshrc-personal.nix
     ./zoxide.nix
     ./packages.nix
+    ./vscode.nix
 
     ./rofi
     ./hyprland
