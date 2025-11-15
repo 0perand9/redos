@@ -1,4 +1,5 @@
-{pkgs, ...}: {
+{ pkgs, ... }:
+{
   programs.kitty = {
     enable = true;
     package = pkgs.kitty;
@@ -10,6 +11,10 @@
       scrollback_lines = 10000;
       enable_audio_bell = false;
       mouse_hide_wait = 60;
+
+      copy_on_select = true; # Optional: auto-copy selection
+      clipboard_control = "write-clipboard write-primary read-clipboard read-primary";
+
     };
     extraConfig = ''
       tab_bar_style fade

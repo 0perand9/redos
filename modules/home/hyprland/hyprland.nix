@@ -10,10 +10,16 @@ in {
   home.packages = with pkgs; [
     swww
     grim
-    slurp
-    wl-clipboard
     swappy
     ydotool
+
+    #media capture
+    slurp
+    wl-clipboard
+    wf-recorder
+
+    #notifications
+    swaynotificationcenter
   ];
   systemd.user.targets.hyprland-session.Unit.Wants = [
     "xdg-desktop-autostart.target"

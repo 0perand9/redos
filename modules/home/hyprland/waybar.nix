@@ -7,7 +7,7 @@
 }:
 let
   betterTransition = "all 0.3s cubic-bezier(.55,-0.68,.48,1.682)";
-  inherit (import ../../hosts/${host}/variables.nix) waybarMonitors;
+  inherit (import ../../../hosts/${host}/variables.nix) waybarMonitors;
 in
 with lib;
 {
@@ -51,9 +51,6 @@ with lib;
         };
         "clock" = {
           format = '' {:L%I:%M %p}'';
-          #   if clock24h == true
-          #   then '' {:L%H:%M}''
-          #   else '' {:L%I:%M %p}'';
           tooltip = true;
           tooltip-format = "<big>{:%A, %d.%B %Y }</big>\n<tt><small>{calendar}</small></tt>";
         };

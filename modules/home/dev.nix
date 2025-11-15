@@ -78,6 +78,8 @@ in
     nodejs_22
     nodePackages.vercel
 
+    digital
+
     python311
     python311Packages.requests
     python311Packages.rich

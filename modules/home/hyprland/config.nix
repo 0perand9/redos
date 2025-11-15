@@ -187,8 +187,6 @@ in
         "noblur, tag:games*"
         "fullscreen, tag:games*"
 
-        "workspace 5 silent, class:^(org-rspeer-Inubot)$"
-
         # intellij fixes
         #"noinitialfocus, class:^(.*jetbrains.*)$, title:^(win.*)$"
         #"noinitialfocus, class:^(.*jetbrains.*)$, title:^\\s$"

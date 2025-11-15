@@ -5,15 +5,15 @@
   hostname = "nixos-desktop";
 
   extraMonitorSettings = ''
-    # Samsung 4K monitor (DP-2)
-    monitor=DP-2,3840x2160@60,0x0,1
+    # Samsung 4K monitor
+    monitor=DP-5,3840x2160@60,0x0,1
 
-    # Asus 1080p monitor (DP-1)
-    monitor=DP-1,1920x1080@60,3840x0,1
+    # Asus 1080p monitor
+    monitor=DP-4,1920x1080@60,3840x0,1
   '';
 
-  mainMonitor = "DP-2";        # tells hyprlock to just have the input on this monitor
-  waybarMonitors = [ "DP-2" ]; # waybar only ouputs on these monitors
+  mainMonitor = "DP-5";        # tells hyprlock to just have the input on this monitor
+  waybarMonitors = [ "DP-5" ]; # waybar only ouputs on these monitors
 
   timeZone = "America/Chicago";
   keyboardLayout = "us";
@@ -63,6 +63,11 @@
     {
       name = "radarr";
       port = 7878;
+      host = "192.168.1.99";
+    }
+    {
+      name = "jellyfin";
+      port = 8099;
       host = "192.168.1.99";
     }
     {

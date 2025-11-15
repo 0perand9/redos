@@ -8,7 +8,6 @@
     ./htop.nix
     ./kitty.nix
     ./stylix.nix
-    ./waybar.nix
     ./starship.nix
     ./zsh.nix
     ./zshrc-personal.nix

@@ -33,7 +33,12 @@
       username = "red";
       pkgs = import nixpkgs {
         inherit system;
-        overlays = [ nix-comfyui.overlays.default ];
+        overlays = [
+          nix-comfyui.overlays.default
+          (final: prev: {
+            digital = final.callPackage ./pkgs/digital.nix {};
+          })
+         ];
       };
     in
     {
