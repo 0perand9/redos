@@ -13,5 +13,6 @@
     (import ./screen-record.nix { inherit pkgs; })
     (import ./check-mullvad.nix { inherit pkgs; })
     (import ./task-waybar.nix { inherit pkgs; })
+    (import ./recording-status.nix { inherit pkgs; })
   ];
 }

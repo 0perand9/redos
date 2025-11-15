@@ -30,6 +30,7 @@ with lib;
           "idle_inhibitor"
         ];
         modules-right = [
+          "custom/recording"
           "custom/hyprbindings"
           "custom/notification"
           "custom/exit"
@@ -131,6 +132,13 @@ with lib;
           format = "";
           # exec = "rofi -show drun";
           on-click = "sleep 0.1 && rofi-launcher";
+        };
+        "custom/recording" = {
+          exec = "recording-status";
+          return-type = "json";
+          interval = 1;
+          format = "{}";
+          on-click = "screen-record";
         };
         "custom/hyprbindings" = {
           tooltip = false;
@@ -288,6 +296,22 @@ with lib;
           margin: 0px;
           padding: 0px 15px 0px 30px;
           border-radius: 0px 0px 0px 40px;
+        }
+        #custom-recording.recording {
+          color: #ff0000;
+          background-color: rgba(255, 0, 0, 0.2);
+          padding: 0 10px;
+          animation: blink 1s linear infinite;
+        }
+
+        @keyframes blink {
+          50% { opacity: 0.5; }
+        }
+
+        #custom-recording.idle {
+          padding: 0;
+          margin: 0;
+          min-width: 0;
         }
       ''
     ];
