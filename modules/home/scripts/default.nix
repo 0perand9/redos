@@ -9,7 +9,9 @@
     (import ./squirtle.nix { inherit pkgs; })
     (import ./keybinds.nix { inherit pkgs; })
     (import ./wallsetter.nix { inherit pkgs; })
-    (import ./screenshootin.nix { inherit pkgs; })
+    (import ./screen-capture.nix { inherit pkgs; })
+    (import ./screen-record.nix { inherit pkgs; })
     (import ./check-mullvad.nix { inherit pkgs; })
+    (import ./task-waybar.nix { inherit pkgs; })
   ];
 }

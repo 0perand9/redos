@@ -19,7 +19,7 @@ in {
     wf-recorder
 
     #notifications
-    swaynotificationcenter
+    libnotify
   ];
   systemd.user.targets.hyprland-session.Unit.Wants = [
     "xdg-desktop-autostart.target"

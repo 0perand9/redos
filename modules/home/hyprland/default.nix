@@ -7,5 +7,6 @@
     ./hyprlock.nix
     ./pyprland.nix
     ./waybar.nix
+    ./notifications.nix
   ];
 }
