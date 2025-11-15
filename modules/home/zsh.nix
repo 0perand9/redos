@@ -5,7 +5,7 @@
     autosuggestion.enable = true;
     syntaxHighlighting.enable = true;
 
-    initExtra = ''
+    initContent = ''
       # Alt+h,j,k,l for navigation
       bindkey "\eh" backward-word
       bindkey "\ej" down-line-or-history

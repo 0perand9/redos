@@ -177,15 +177,17 @@ in
         "opacity 0.9 0.8, tag:projects*"
         "opacity 0.94 0.86, tag:im*"
         "opacity 0.9 0.8, tag:file-manager*"
+        "opacity 0.9 0.8, class:^(.*RuneLite)$*"
+        "opacity 0.9 0.8, class:^(jetbrains-idea)$*"
         "opacity 0.8 0.7, tag:terminal*"
         "opacity 0.8 0.7, tag:settings*"
         "opacity 0.8 0.7, class:^(gedit|org.gnome.TextEditor|mousepad)$"
         "opacity 0.9 0.8, class:^(seahorse)$ # gnome-keyring gui"
         "opacity 0.95 0.75, title:^(Picture-in-Picture)$"
+        "opacity 0.9 0.8, class:^(code)$"
         "pin, title:^(Picture-in-Picture)$"
         "keepaspectratio, title:^(Picture-in-Picture)$"
         "noblur, tag:games*"
-        "fullscreen, tag:games*"
 
         # intellij fixes
         #"noinitialfocus, class:^(.*jetbrains.*)$, title:^(win.*)$"

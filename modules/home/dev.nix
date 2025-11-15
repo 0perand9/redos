@@ -43,7 +43,6 @@ in
 
     postgresql
 
-    vscode
     nixfmt-rfc-style
 
     recaf-launcher

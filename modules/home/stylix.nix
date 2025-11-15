@@ -6,5 +6,6 @@
     hyprlock.enable = false;
     ghostty.enable = false;
     swaync.enable = false;
+    vscode.enable = false;
   };
 }
