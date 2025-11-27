@@ -12,7 +12,7 @@
     monitor=DP-4,1920x1080@60,3840x0,1
   '';
 
-  mainMonitor = "DP-5";        # tells hyprlock to just have the input on this monitor
+  mainMonitor = "DP-5"; # tells hyprlock to just have the input on this monitor
   waybarMonitors = [ "DP-5" ]; # waybar only ouputs on these monitors
 
   timeZone = "America/Chicago";
@@ -22,7 +22,7 @@
 
   browser = "firefox";
 
-  wallpaper = "colorful-profile.png";
+  wallpaper = "gargantua.jpg";
 
   services = [
     {

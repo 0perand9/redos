@@ -44,6 +44,7 @@
       "networkmanager"
       "scanner"
       "wheel"
+      "ydotool"
       "input"
     ];
     

@@ -1,10 +1,11 @@
-{host, ...}: let
-  inherit
-    (import ../../../hosts/${host}/variables.nix)
+{ host, ... }:
+let
+  inherit (import ../../../hosts/${host}/variables.nix)
     browser
     terminal
     ;
-in {
+in
+{
   wayland.windowManager.hyprland.settings = {
     bind = [
       "$modifier,Return,exec,${terminal}"
@@ -22,6 +23,7 @@ in {
       "$modifier,G,exec,gimp"
       "$modifier,T,exec,pypr toggle term"
       # "$modifier,V,exec,${terminal} --class clipse -e 'clipse'"
+      "$modifier SHIFT,F8,exec,autoclicker"
       "$modifier SHIFT,T,exec,pypr toggle thunar"
       "$modifier,M,exec,pavucontrol"
       "$modifier,Q,killactive,"
@@ -95,6 +97,12 @@ in {
       ",XF86AudioPrev, exec, playerctl previous"
       ",XF86MonBrightnessDown,exec,brightnessctl set 5%-"
       ",XF86MonBrightnessUp,exec,brightnessctl set +5%"
+
+      # Mouse keys
+      "$modifier CONTROL, h, exec, ydotool mousemove -x -42 -y 0"
+      "$modifier CONTROL, l, exec, ydotool mousemove -x 42 -y 0"
+      "$modifier CONTROL, k, exec, ydotool mousemove -x 0 -y -36"
+      "$modifier CONTROL, j, exec, ydotool mousemove -x 0 -y 36"
     ];
 
     bindm = [
