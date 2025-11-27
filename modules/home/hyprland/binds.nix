@@ -33,6 +33,7 @@ in {
       "$modifier CONTROL,F,fullscreen, 1"
       "$modifier ALT,F,workspaceopt, allfloat"
       "$modifier SHIFT,C,exit,"
+      "$modifier SHIFT,Z,pin,active"
       "$modifier SHIFT,left,movewindow,l"
       "$modifier SHIFT,right,movewindow,r"
       "$modifier SHIFT,up,movewindow,u"

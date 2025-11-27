@@ -41,6 +41,8 @@ in
 
     gitui
 
+    ydotool
+
     postgresql
 
     nixfmt-rfc-style

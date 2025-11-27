@@ -1,7 +1,5 @@
 { pkgs }:
 pkgs.writeShellScriptBin "screen-record" ''
-  PATH=${pkgs.libnotify}/bin:${pkgs.wf-recorder}/bin:${pkgs.slurp}/bin:${pkgs.coreutils}/bin:${pkgs.wl-clipboard}/bin:$PATH
-  
   STATUS_FILE="/tmp/wf-recorder-status"
   VIDEO_FILE="$HOME/Videos/recording-$(date +%Y%m%d-%H%M%S).mp4"
   
