@@ -10,14 +10,13 @@ let
     openjdk11
     
     jdk8
-    temurin-bin-24
 
     zulu11
 
     (zulu17.override { enableJavaFX = true; })
     (zulu8.override { enableJavaFX = true; })
-    (jdk17.override { enableJavaFX = true; })
-    (jdk21.override { enableJavaFX = true; })
+    # (jdk17.override { enableJavaFX = true; })
+    # (jdk21.override { enableJavaFX = true; })
   ];
 in
 {

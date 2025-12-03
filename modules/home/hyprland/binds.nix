@@ -14,7 +14,6 @@ in
       "$modifier ALT,W,exec,wallsetter"
       "$modifier SHIFT,N,exec,swaync-client -rs"
       "$modifier,W,exec,${browser}"
-      "$modifier,E,exec,emopicker9000"
       "$modifier,S,exec,screen-capture"
       "$modifier SHIFT,S,exec,screen-record"
       "$modifier,D,exec,discord"

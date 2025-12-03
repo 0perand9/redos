@@ -18,7 +18,6 @@ in
     virt-manager.enable = true;
     firefox = {
       enable = true;
-      package = pkgs.firefox-wayland;
     };
   };
   nixpkgs.config.allowUnfree = true;

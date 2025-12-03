@@ -189,6 +189,8 @@ in
         "pin, title:^(Picture-in-Picture)$"
         "keepaspectratio, title:^(Picture-in-Picture)$"
         "noblur, tag:games*"
+        "nofocus, class:^(net-runelite-client-RuneLite)$, title:^win\d+$"
+        "noinitialfocus, class:^(net-runelite-client-RuneLite)$, title:^win\d+$"
 
         # intellij fixes
         #"noinitialfocus, class:^(.*jetbrains.*)$, title:^(win.*)$"

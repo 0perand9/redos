@@ -8,12 +8,15 @@
     # Samsung 4K monitor
     monitor=DP-5,3840x2160@60,0x0,1
 
-    # Asus 1080p monitor
-    monitor=DP-4,1920x1080@60,3840x0,1
+    # Odyssey G81SF
+    monitor=DP-4,3840x2160@240.00Hz,3840x0,1
   '';
 
   mainMonitor = "DP-5"; # tells hyprlock to just have the input on this monitor
-  waybarMonitors = [ "DP-5" ]; # waybar only ouputs on these monitors
+  waybarMonitors = [
+    "DP-5"
+    "DP-4"
+  ]; # waybar only ouputs on these monitors
 
   timeZone = "America/Chicago";
   keyboardLayout = "us";

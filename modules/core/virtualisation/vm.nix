@@ -13,10 +13,6 @@
       onShutdown = "shutdown";
       qemu = {
         package = pkgs.qemu_kvm;
-        ovmf = {
-          enable = true;
-          packages = [ pkgs.OVMF.fd ];
-        };
       };
     };
   };

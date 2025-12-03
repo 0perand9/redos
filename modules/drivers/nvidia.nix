@@ -35,7 +35,7 @@ in
       graphics = {
         enable = true;
         extraPackages = with pkgs; [
-          vaapiVdpau
+          libva-vdpau-driver
           vulkan-validation-layers
           nvidia-vaapi-driver
         ];

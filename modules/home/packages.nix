@@ -30,5 +30,7 @@
     xorg.libXrandr
 
     runelite
+
+    playerctl
   ];
 }
