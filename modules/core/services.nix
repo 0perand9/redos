@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, username, ... }:
 {
   # Services to start
   services = {
@@ -41,6 +41,14 @@
     mullvad-vpn = {
       enable = true;
       package = pkgs.mullvad-vpn;
+    };
+    syncthing = {
+      enable = true;
+      user = "${username}";
+      dataDir = "/home/${username}/.config/syncthing";
+      configDir = "/home/${username}/.config/syncthing";
+      overrideDevices = true;
+      overrideFolders = true;
     };
   };
 }

@@ -14,11 +14,11 @@
     ./zoxide.nix
     ./packages.nix
     ./vscode.nix
-    ./jetbrains.nix
 
     ./rofi
     ./hyprland
-    ./yazi
+    
+    # ./yazi
     ./fastfetch
     ./wlogout
     ./scripts

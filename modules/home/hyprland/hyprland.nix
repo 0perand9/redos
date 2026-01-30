@@ -3,10 +3,13 @@
   username,
   host,
   ...
-}: let
-    inherit (import ../../../hosts/${host}/variables.nix)
-    browser;
-in {
+}:
+let
+  inherit (import ../../../hosts/${host}/variables.nix)
+    browser
+    ;
+in
+{
   home.packages = with pkgs; [
     swww
     grim
@@ -21,9 +24,37 @@ in {
     #notifications
     libnotify
   ];
-  systemd.user.targets.hyprland-session.Unit.Wants = [
-    "xdg-desktop-autostart.target"
-  ];
+  systemd.user = {
+    targets.hyprland-session.Unit.Wants = [
+      "xdg-desktop-autostart.target"
+    ];
+    services = {
+      waybar = {
+        Unit = {
+          Description = "Waybar status bar";
+          PartOf = [ "graphical-session.target" ];
+          After = [ "hyprland-session.target" ];
+        };
+
+        Service = {
+          ExecStart = "${pkgs.waybar}/bin/waybar";
+          Restart = "on-failure";
+          RestartSec = "5";
+        };
+
+        Install = {
+          WantedBy = [ "graphical-session.target" ];
+        };
+      };
+      xdg-desktop-portal-hyprland = {
+        Service = {
+          Restart = "on-failure";
+          RestartSec = "5";
+        };
+      };
+    };
+  };
+  
   wayland.windowManager.hyprland = {
     enable = true;
     xwayland.enable = true;

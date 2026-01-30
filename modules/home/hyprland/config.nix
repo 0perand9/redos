@@ -18,7 +18,8 @@ in
       exec-once = [
         "dbus-update-activation-environment --all --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP"
         "systemctl --user import-environment WAYLAND_DISPLAY XDG_CURRENT_DESKTOP"
-        "killall -q swww;sleep .5 && swww init"
+        "killall -q swww;sleep .5"
+        "swww-daemon &"
         "killall -q waybar;sleep .5 && waybar"
         "killall -q swaync;sleep .5 && swaync"
         "nm-applet --indicator"
@@ -26,10 +27,21 @@ in
         "pypr &"
         "sleep 1.5 && swww img /home/${username}/Pictures/Wallpapers/${wallpaper}"
 
-        "wl-paste --type text --watch cliphist store" 
+        "wl-paste --type text --watch cliphist store"
         "wl-paste --type image --watch cliphist store"
         "ydotoold &"
+        "hyprctl setcursor Bibata-Modern-Classic 24"
       ];
+
+      render = {
+        cm_fs_passthrough = 2;
+        cm_auto_hdr = 2;
+        direct_scanout = 1;
+      };
+
+      experimental = {
+        xx_color_management_v4 = true;
+      };
 
       input = {
         kb_layout = "${keyboardLayout}";
@@ -115,8 +127,6 @@ in
       };
 
       windowrulev2 = [
-        "tag +lookingglass, class:^([Ll]ooking[ -][Gg]lass[ -][Cc]lient)$, wayland"
-        "size 2560 1440, tag:lookingglass"
         "tag +file-manager, class:^([Tt]hunar|org.gnome.Nautilus|[Pp]cmanfm-qt)$"
         "tag +terminal, class:^(Alacritty|kitty|kitty-dropterm)$"
         "tag +browser, class:^(Brave-browser(-beta|-dev|-unstable)?)$"
@@ -179,7 +189,7 @@ in
         "opacity 0.94 0.86, tag:im*"
         "opacity 0.9 0.8, tag:file-manager*"
         "opacity 0.9 0.8, class:^(.*RuneLite)$*"
-        "opacity 0.9 0.8, class:^(jetbrains-idea)$*"
+        "opacity 0.95 0.9, class:^jetbrains-.*$"
         "opacity 0.8 0.7, tag:terminal*"
         "opacity 0.8 0.7, tag:settings*"
         "opacity 0.8 0.7, class:^(gedit|org.gnome.TextEditor|mousepad)$"
@@ -205,7 +215,6 @@ in
         #"float, class:^(jetbrains-.*)$,title:^(.*confirmation.*)$"
         #"float, class:^(jetbrains-.*)$,title:^(.*Choose.*)$"
       ];
-
       env = [
         "NIXOS_OZONE_WL, 1"
         "NIXPKGS_ALLOW_UNFREE, 1"
@@ -214,19 +223,24 @@ in
         "XDG_SESSION_DESKTOP, Hyprland"
         "GDK_BACKEND, wayland, x11"
         "CLUTTER_BACKEND, wayland"
-        "QT_QPA_PLATFORM=wayland;xcb"
+        "QT_QPA_PLATFORM, wayland:xcb"
         "QT_WAYLAND_DISABLE_WINDOWDECORATION, 1"
         "QT_AUTO_SCREEN_SCALE_FACTOR, 1"
-        "SDL_VIDEODRIVER, x11"
+        "SDL_VIDEODRIVER, wayland"
         "MOZ_ENABLE_WAYLAND, 1"
-        "AQ_DRM_DEVICES,/dev/dri/card1:/dev/dri/card0"
-        "GDK_SCALE,1"
-        "QT_SCALE_FACTOR,1"
-        "EDITOR,nano"
-
+        "AQ_DRM_DEVICES, /dev/dri/card1:/dev/dri/card0"
+        "GDK_SCALE, 1"
+        "QT_SCALE_FACTOR, 1"
+        "EDITOR, nano"
         "LIBVA_DRIVER_NAME, nvidia"
         "WLR_NO_HARDWARE_CURSORS, 1"
         "GBM_BACKEND, nvidia-drm"
+        "XCURSOR_SIZE, 24"
+        "XCURSOR_THEME, Bibata-Modern-Classic"
+        "XWAYLAND_NO_GLAMOR, 1"
+        "_JAVA_AWT_WM_NONREPARENTING, 1"
+        "__GLX_VENDOR_LIBRARY_NAME, nvidia"
+        "NVD_BACKEND, direct"
       ];
     };
 

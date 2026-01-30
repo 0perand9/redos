@@ -13,6 +13,7 @@
       onShutdown = "shutdown";
       qemu = {
         package = pkgs.qemu_kvm;
+        swtpm.enable = true;
       };
     };
   };

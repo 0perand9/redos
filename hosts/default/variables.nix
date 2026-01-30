@@ -6,16 +6,16 @@
 
   extraMonitorSettings = ''
     # Samsung 4K monitor
-    monitor=DP-5,3840x2160@60,0x0,1
+    monitor=DP-1,3840x2160@60,0x0,1
 
     # Odyssey G81SF
-    monitor=DP-4,3840x2160@240.00Hz,3840x0,1
+    monitor=DP-2,3840x2160@240.00Hz,3840x0,1,bitdepth,10,cm,hdr,sdrbrightness,1.2,sdrsaturation,0.98
   '';
 
-  mainMonitor = "DP-5"; # tells hyprlock to just have the input on this monitor
+  mainMonitor = "DP-1"; # tells hyprlock to just have the input on this monitor
   waybarMonitors = [
-    "DP-5"
-    "DP-4"
+    "DP-1"
+    # "DP-2"
   ]; # waybar only ouputs on these monitors
 
   timeZone = "America/Chicago";
@@ -23,14 +23,14 @@
   consoleKeyMap = "us";
   terminal = "kitty";
 
-  browser = "firefox";
+  browser = "zen";
 
   wallpaper = "gargantua.jpg";
 
   services = [
     {
       name = "ollama";
-      port = 8080;
+      port = 8069;
       host = "127.0.0.1";
     }
     {
@@ -77,14 +77,19 @@
       name = "botbuddy";
       port = 8881;
     }
+    {
+      name = "nas";
+      port = 80;
+      host = "192.168.1.99";
+    }
   ];
 
   gpu-bypass = {
     enable = true;
-    # RTX 3070 Ti
+    
     gpuIds = [
-      "10de:1c03" # Graphics
-      "10de:10f1" # Audio
+      "10de:1c03"
+      "10de:10f1"
     ];
   };
 }

@@ -9,16 +9,19 @@ let
     system = pkgs.system;
     config = config.nixpkgs.config;
   };
+  wine = pkgs.wineWowPackages.waylandFull.override {
+    waylandSupport = true;
+    x11Support = true;
+    vulkanSupport = true;
+  };
 in
 {
   nixpkgs.config.permittedInsecurePackages = [
     "electron-33.4.11"
   ];
   programs = {
+    xwayland.enable = true;
     virt-manager.enable = true;
-    firefox = {
-      enable = true;
-    };
   };
   nixpkgs.config.allowUnfree = true;
   environment.systemPackages = with pkgs; [
@@ -30,9 +33,17 @@ in
     amfora # Fancy Terminal Browser For Gemini Protocol
     pavucontrol # For Editing Audio Levels & Devices
     postgresql
-    greetd.tuigreet
-    greetd.wlgreet
-    wineWowPackages.waylandFull
+    tuigreet
+
+    inputs.zen-browser.packages."${pkgs.system}".default
+
+    protonup-qt
+
+    wireshark
+
+    devenv
+
+    wine
     winetricks
     # clipse
     lutris
@@ -47,8 +58,6 @@ in
     vlc
     wget
 
-    unstable.zulu25
-
     unetbootin
 
     cliphist
@@ -59,6 +68,7 @@ in
 
     tealdeer
 
+    unstable.opencode
     unstable.code-cursor
 
     gsettings-desktop-schemas
@@ -72,17 +82,15 @@ in
 
     remmina
 
-    jdk17
-    javaPackages.openjfx17
     libGL
 
-    inputs.yazi.packages.${pkgs.system}.yazi # TUI FileMgr
+    # inputs.yazi.packages.${pkgs.system}.yazi # TUI FileMgr
 
     gimp
 
     unstable.lsfg-vk
     unstable.lsfg-vk-ui
-    
+
     prismlauncher
     mangohud
 

@@ -34,7 +34,8 @@ in
 
   services.open-webui = {
     enable = true;
-    # package = unstable.open-webui;
+    package = unstable.open-webui;
+    port = 8069;
   };
 
   services.perplexica = {

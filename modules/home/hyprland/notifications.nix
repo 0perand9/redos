@@ -1,6 +1,7 @@
 {
   pkgs,
   config,
+  lib,
   ...
 }:
 {
@@ -22,7 +23,7 @@
       control-center-margin-right = 20;
       control-center-margin-left = 0;
       control-center-width = 500;
-      control-center-height = 600;
+      control-center-height = 650;
       fit-to-screen = false;
       layer = "top";
       cssPriority = "user";
@@ -67,14 +68,14 @@
     };
 
     #from: https://gist.github.com/MrRoy/3a4a0b1462921e78bf667e1b36697268
-    style = ''
+    style = lib.mkForce ''
       /* Dracula Theme */
-      @define-color foreground rgb(${config.lib.stylix.colors.base05});
-      @define-color background rgb(${config.lib.stylix.colors.base00});
+      @define-color foreground #${config.lib.stylix.colors.base05};
+      @define-color background #${config.lib.stylix.colors.base00};
       @define-color background-alpha rgba(${config.lib.stylix.colors.base00-rgb-r}, ${config.lib.stylix.colors.base00-rgb-g}, ${config.lib.stylix.colors.base00-rgb-b}, 0.8);
       @define-color accent rgba(${config.lib.stylix.colors.base0E-rgb-r}, ${config.lib.stylix.colors.base0E-rgb-g}, ${config.lib.stylix.colors.base0E-rgb-b}, 0.8);
-      @define-color current-line rgb(${config.lib.stylix.colors.base02});
-      @define-color comment rgb(${config.lib.stylix.colors.base03});
+      @define-color current-line #${config.lib.stylix.colors.base02};
+      @define-color comment #${config.lib.stylix.colors.base03};
 
       .notification-row {
         transition: all 200ms ease;
@@ -172,7 +173,6 @@
 
       .notification-default-action:hover,
       .notification-action:hover {
-        -gtk-icon-effect: none;
         background: @current-line;
       }
 
@@ -285,7 +285,10 @@
       .control-center-list {
         background: transparent;
       }
-
+      .control-center-list {
+        background: transparent;
+      }
+      
       .floating-notifications {
         background: transparent;
       }

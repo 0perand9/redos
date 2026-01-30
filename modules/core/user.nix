@@ -38,6 +38,7 @@
     isNormalUser = true;
     extraGroups = [
       "adbusers"
+      "wiresharksudo nixos-rebuild switch"
       "docker"
       "libvirtd"
       "lp"
@@ -52,4 +53,5 @@
     ignoreShellProgramCheck = true;
   };
   nix.settings.allowed-users = [ "${username}" ];
+  nix.settings.trusted-users = [ "${username}" "root" ];
 }

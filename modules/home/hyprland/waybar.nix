@@ -27,7 +27,7 @@ with lib;
           "pulseaudio"
           "cpu"
           "memory"
-          "idle_inhibitor"
+          "disk"
         ];
         modules-right = [
           "custom/recording"
@@ -57,6 +57,7 @@ with lib;
         };
         "hyprland/window" = {
           max-length = 22;
+          min-length = 22;
           separate-outputs = false;
           rewrite = {
             "" = " 🙈 No Windows? ";
@@ -117,7 +118,7 @@ with lib;
         "custom/vpn-location" = {
           format = "{}";
           exec = "check-mullvad";
-          interval = 5;
+          interval = 60;
           tooltip = true;
           tooltip-format = "VPN Connection Status";
           on-click = "mullvad-vpn";
@@ -145,32 +146,13 @@ with lib;
           format = "󱕴";
           on-click = "sleep 0.1 && list-keybinds";
         };
-        "idle_inhibitor" = {
-          format = "{icon}";
-          format-icons = {
-            activated = "";
-            deactivated = "";
-          };
-          tooltip = "true";
-        };
         "custom/notification" = {
           tooltip = false;
-          format = "{icon} {}";
-          format-icons = {
-            notification = "<span foreground='red'><sup></sup></span>";
-            none = "";
-            dnd-notification = "<span foreground='red'><sup></sup></span>";
-            dnd-none = "";
-            inhibited-notification = "<span foreground='red'><sup></sup></span>";
-            inhibited-none = "";
-            dnd-inhibited-notification = "<span foreground='red'><sup></sup></span>";
-            dnd-inhibited-none = "";
-          };
+          format = " {}";
           return-type = "json";
           exec-if = "which swaync-client";
           exec = "swaync-client -swb";
           on-click = "sleep 0.1 && task-waybar";
-          escape = true;
         };
         "battery" = {
           states = {
@@ -253,7 +235,7 @@ with lib;
         tooltip label {
           color: #${config.lib.stylix.colors.base08};
         }
-        #window, #pulseaudio, #cpu, #memory, #idle_inhibitor {
+        #window, #pulseaudio, #cpu, #memory, #disk {
           font-weight: bold;
           margin: 4px 0px;
           margin-left: 7px;

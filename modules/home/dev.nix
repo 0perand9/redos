@@ -8,15 +8,16 @@ let
   additionalJDKs = with pkgs; [
     openjdk8
     openjdk11
-    
+
     jdk8
 
     zulu11
+    zulu25
 
     (zulu17.override { enableJavaFX = true; })
     (zulu8.override { enableJavaFX = true; })
-    # (jdk17.override { enableJavaFX = true; })
-    # (jdk21.override { enableJavaFX = true; })
+    (jdk17.override { enableJavaFX = true; })
+    (jdk21.override { enableJavaFX = true; })
   ];
 in
 {
@@ -36,6 +37,11 @@ in
     nss
     nspr
 
+    cmake
+    ninja
+    direnv
+    nix-direnv
+
     kdePackages.kalarm
 
     gitui
@@ -48,9 +54,7 @@ in
 
     recaf-launcher
 
-    jetbrains.idea-ultimate
-    jetbrains.rust-rover
-    jetbrains.datagrip
+    jetbrains-toolbox
 
     cargo
     gcc

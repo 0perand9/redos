@@ -6,6 +6,8 @@
     syntaxHighlighting.enable = true;
 
     initContent = ''
+      eval "$(direnv hook bash)"
+      
       # Alt+h,j,k,l for navigation
       bindkey "\eh" backward-word
       bindkey "\ej" down-line-or-history

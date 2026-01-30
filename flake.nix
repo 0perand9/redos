@@ -6,16 +6,19 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     agenix.url = "github:ryantm/agenix";
-    nixpkgs.url = "github:nixos/nixpkgs/release-25.11";
+    nixpkgs.url = "github:nixos/nixpkgs/nixos-25.11";
     stylix.url = "github:danth/stylix/release-25.11";
-
+    zen-browser = {
+      url = "github:0xc000022070/zen-browser-flake";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
     nvf.url = "github:notashelf/nvf";
     nix-comfyui.url = "github:dyscorv/nix-comfyui";
-    yazi = {
-      url = "github:sxyazi/yazi";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
+    # yazi = {
+    #   url = "github:sxyazi/yazi";
+    #   inputs.nixpkgs.follows = "nixpkgs";
+    # };
   };
   outputs =
     {
@@ -24,6 +27,7 @@
       nixpkgs-unstable,
       home-manager,
       agenix,
+      zen-browser,
       ...
     }@inputs:
     let

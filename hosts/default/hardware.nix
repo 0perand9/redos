@@ -28,7 +28,7 @@
   age.identityPaths = [ "/etc/ssh/ssh_host_ed25519_key" ];
   
   age.secrets.truenas-creds = {
-    file = ../../secrets/truenas-creds.age; # Adjust path as needed
+    file = ../../secrets/truenas-creds.age;
     mode = "600";
   };
   environment.systemPackages = with pkgs; [
@@ -39,13 +39,17 @@
     device = "/dev/disk/by-label/nixos";
     fsType = "ext4";
   };
+  fileSystems."/boot" = {
+     device = "/dev/disk/by-label/NIXOS-ESP";
+     fsType = "vfat";
+   };
 
-  systemd.mounts = [{
-    what = "//192.168.1.99/file_shared";
-    where = "/mnt/truenas";
-    type = "cifs";
-    options = "credentials=${config.age.secrets.truenas-creds.path},uid=1000,gid=100,file_mode=0777,dir_mode=0777,vers=2.1";
-  }];
+  # systemd.mounts = [{
+  #   what = "//192.168.1.99/file_shared";
+  #   where = "/mnt/truenas";
+  #   type = "cifs";
+  #   options = "credentials=${config.age.secrets.truenas-creds.path},uid=1000,gid=100,file_mode=0777,dir_mode=0777,vers=2.1";
+  # }];
 
   systemd.automounts = [{
     where = "/mnt/truenas";
